@@ -1,0 +1,15 @@
+def exibir_menu():
+    print("\n" + "=" * 40)
+    print("         TASKFLOW")
+    print("=" * 40)
+    print("1 - Criar tarefa")
+    print("2 - Listar tarefas")
+    print("3 - Editar tarefa")
+    print("4 - Excluir tarefa")
+    print("5 - Concluir tarefa")
+    print("6 - Buscar tarefa")
+    print("7 - Dashboard")
+    print("0 - Sair")
+    print("=" * 40)
+
+    return input("Escolha uma opção: ")
