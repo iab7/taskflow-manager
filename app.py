@@ -5,7 +5,7 @@ from crud import (
     editar_tarefa,
     excluir_tarefa,
     concluir_tarefa,
-    buscar_tarefa
+    buscar_tarefa,
 )
 from dashboard import mostrar_dashboard
 

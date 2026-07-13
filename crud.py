@@ -10,10 +10,7 @@ def criar_tarefa(titulo, descricao, prioridade):
         novo_id = max(t["id"] for t in tarefas) + 1
 
     tarefa = Tarefa(
-        id=novo_id,
-        titulo=titulo,
-        descricao=descricao,
-        prioridade=prioridade
+        id=novo_id, titulo=titulo, descricao=descricao, prioridade=prioridade
     )
 
     tarefas.append(tarefa.to_dict())
@@ -85,10 +82,7 @@ def concluir_tarefa(id_tarefa):
 def buscar_tarefa(texto):
     tarefas = carregar_tarefas()
 
-    resultado = [
-        t for t in tarefas
-        if texto.lower() in t["titulo"].lower()
-    ]
+    resultado = [t for t in tarefas if texto.lower() in t["titulo"].lower()]
 
     if not resultado:
         print("\nNenhuma tarefa encontrada.")

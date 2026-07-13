@@ -3,11 +3,7 @@ from storage import carregar_tarefas
 
 
 def test_criar_tarefa():
-    criar_tarefa(
-        "Teste CRUD",
-        "Descrição teste",
-        "Alta"
-    )
+    criar_tarefa("Teste CRUD", "Descrição teste", "Alta")
 
     tarefas = carregar_tarefas()
 

@@ -9,7 +9,7 @@ def test_salvar_e_carregar():
             "titulo": "Teste",
             "descricao": "Descrição",
             "prioridade": "Alta",
-            "status": "Pendente"
+            "status": "Pendente",
         }
     ]
 
