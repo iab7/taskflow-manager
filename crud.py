@@ -2,7 +2,41 @@ from models import Tarefa
 from storage import carregar_tarefas, salvar_tarefas
 
 
+PRIORIDADES_VALIDAS = ["Alta", "Média", "Baixa"]
+
+
+def validar_dados(titulo, descricao, prioridade):
+    """Valida os dados informados para uma tarefa."""
+
+    titulo = titulo.strip()
+    descricao = descricao.strip()
+    prioridade = prioridade.strip().capitalize()
+
+    if not titulo:
+        raise ValueError("O título não pode estar vazio.")
+
+    if not descricao:
+        raise ValueError("A descrição não pode estar vazia.")
+
+    if prioridade not in PRIORIDADES_VALIDAS:
+        raise ValueError(
+            f"Prioridade inválida. Utilize: {', '.join(PRIORIDADES_VALIDAS)}."
+        )
+
+    return titulo, descricao, prioridade
+
+
 def criar_tarefa(titulo, descricao, prioridade):
+    try:
+        titulo, descricao, prioridade = validar_dados(
+            titulo,
+            descricao,
+            prioridade,
+        )
+    except ValueError as erro:
+        print(f"\n❌ {erro}")
+        return
+
     tarefas = carregar_tarefas()
 
     novo_id = 1
@@ -10,7 +44,10 @@ def criar_tarefa(titulo, descricao, prioridade):
         novo_id = max(t["id"] for t in tarefas) + 1
 
     tarefa = Tarefa(
-        id=novo_id, titulo=titulo, descricao=descricao, prioridade=prioridade
+        id=novo_id,
+        titulo=titulo,
+        descricao=descricao,
+        prioridade=prioridade,
     )
 
     tarefas.append(tarefa.to_dict())
@@ -38,6 +75,16 @@ def listar_tarefas():
 
 
 def editar_tarefa(id_tarefa, titulo, descricao, prioridade):
+    try:
+        titulo, descricao, prioridade = validar_dados(
+            titulo,
+            descricao,
+            prioridade,
+        )
+    except ValueError as erro:
+        print(f"\n❌ {erro}")
+        return
+
     tarefas = carregar_tarefas()
 
     for tarefa in tarefas:
@@ -82,7 +129,10 @@ def concluir_tarefa(id_tarefa):
 def buscar_tarefa(texto):
     tarefas = carregar_tarefas()
 
-    resultado = [t for t in tarefas if texto.lower() in t["titulo"].lower()]
+    resultado = [
+        t for t in tarefas
+        if texto.lower() in t["titulo"].lower()
+    ]
 
     if not resultado:
         print("\nNenhuma tarefa encontrada.")
