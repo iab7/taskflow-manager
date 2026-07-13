@@ -3,11 +3,13 @@ import os
 
 ARQUIVO = "data/tarefas.json"
 
+os.makedirs(os.path.dirname(ARQUIVO), exist_ok=True)
+
 
 def carregar_tarefas():
     """Carrega as tarefas do arquivo JSON."""
     if not os.path.exists(ARQUIVO):
-        return []
+        salvar_tarefas ([])
 
     with open(ARQUIVO, "r", encoding="utf-8") as arquivo:
         try:
