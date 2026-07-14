@@ -9,6 +9,7 @@ from crud import (
 )
 from dashboard import mostrar_dashboard
 
+print("\nBem-vindo ao TaskFlow!")
 
 def main():
     while True:
