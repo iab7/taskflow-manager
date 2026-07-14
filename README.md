@@ -182,7 +182,7 @@ Workflow:
 
 ## 👨‍💻 Autor
 
-Desenvolvido por **Soma Cruz** como atividade acadêmica.
+Desenvolvido por **Isaque Abreu** como atividade acadêmica.
 
 GitHub:
 https://github.com/iab7
