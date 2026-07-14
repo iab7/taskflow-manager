@@ -6,6 +6,10 @@ def mostrar_dashboard():
 
     tarefas = carregar_tarefas()
 
+    if not tarefas:
+        print("\nNenhuma tarefa cadastrada.")
+        return
+
     total = len(tarefas)
 
     concluidas = sum(
