@@ -27,7 +27,11 @@ def main():
 
         elif opcao == "3":
             print("\n=== Editar Tarefa ===")
-            id_tarefa = int(input("ID da tarefa: "))
+            try:
+                id_tarefa = int(input("ID da tarefa: "))
+            except ValueError:
+            print("\n❌ Digite um número válido.")
+            continue
             titulo = input("Novo título: ")
             descricao = input("Nova descrição: ")
             prioridade = input("Nova prioridade: ")
@@ -36,17 +40,28 @@ def main():
 
         elif opcao == "4":
             print("\n=== Excluir Tarefa ===")
-            id_tarefa = int(input("ID da tarefa: "))
+            try:
+                id_tarefa = int(input("ID da tarefa: "))
+            except ValueError:
+            print("\n❌ Digite um número válido.")
+            continue
             excluir_tarefa(id_tarefa)
 
         elif opcao == "5":
             print("\n=== Concluir Tarefa ===")
-            id_tarefa = int(input("ID da tarefa: "))
+            try:
+                id_tarefa = int(input("ID da tarefa: "))
+            except ValueError:
+            print("\n❌ Digite um número válido.")
+            continue
             concluir_tarefa(id_tarefa)
 
         elif opcao == "6":
-            texto = input("Pesquisar: ")
-            buscar_tarefa(texto)
+            texto = input("Pesquisar: ").strip()
+            if texto:
+                buscar_tarefa(texto)
+            else:
+                print("\n❌ Informe um texto para pesquisar.")
 
         elif opcao == "7":
             mostrar_dashboard()
