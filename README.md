@@ -203,6 +203,43 @@ flowchart LR
     U --> UC7
 ```
 ---
+## 📌 Diagrama de Classes
+
+```mermaid
+classDiagram
+
+class Tarefa{
+    +int id
+    +string titulo
+    +string descricao
+    +string prioridade
+    +string status
+    +to_dict()
+}
+
+class Crud{
+    +criar_tarefa()
+    +listar_tarefas()
+    +editar_tarefa()
+    +excluir_tarefa()
+    +concluir_tarefa()
+    +buscar_tarefa()
+}
+
+class Storage{
+    +carregar_tarefas()
+    +salvar_tarefas()
+}
+
+class Dashboard{
+    +mostrar_dashboard()
+}
+
+Crud --> Storage
+Crud --> Tarefa
+Dashboard --> Storage
+```
+---
 ## 👨‍💻 Autor
 
 Desenvolvido por **Isaque Abreu** como atividade acadêmica.
