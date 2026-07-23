@@ -179,7 +179,21 @@ Workflow:
 - Boas práticas de programação
 
 ---
+Diagrama de Casos de Uso:
+          Usuário
 
+             |
+
+ ------------------------------------
+| Criar tarefa                       |
+| Listar tarefas                     |
+| Editar tarefa                      |
+| Excluir tarefa                     |
+| Concluir tarefa                    |
+| Buscar tarefa                      |
+| Visualizar dashboard               |
+ ------------------------------------
+---
 ## 👨‍💻 Autor
 
 Desenvolvido por **Isaque Abreu** como atividade acadêmica.
