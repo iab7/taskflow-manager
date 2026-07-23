@@ -181,10 +181,7 @@ Workflow:
 ---
 Diagrama de Casos de Uso:
           Usuário
-
-             |
-
- ------------------------------------
+_______________________________________
 | Criar tarefa                       |
 | Listar tarefas                     |
 | Editar tarefa                      |
@@ -192,7 +189,7 @@ Diagrama de Casos de Uso:
 | Concluir tarefa                    |
 | Buscar tarefa                      |
 | Visualizar dashboard               |
- ------------------------------------
+_______________________________________
 ---
 ## 👨‍💻 Autor
 
