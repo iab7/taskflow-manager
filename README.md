@@ -179,17 +179,29 @@ Workflow:
 - Boas práticas de programação
 
 ---
-Diagrama de Casos de Uso:
-          Usuário
-_______________________________________
-| Criar tarefa                       |
-| Listar tarefas                     |
-| Editar tarefa                      |
-| Excluir tarefa                     |
-| Concluir tarefa                    |
-| Buscar tarefa                      |
-| Visualizar dashboard               |
-_______________________________________
+## 📌 Diagrama de Casos de Uso
+
+```mermaid
+flowchart LR
+
+    U[Usuário]
+
+    UC1(Criar tarefa)
+    UC2(Listar tarefas)
+    UC3(Editar tarefa)
+    UC4(Excluir tarefa)
+    UC5(Concluir tarefa)
+    UC6(Buscar tarefa)
+    UC7(Visualizar Dashboard)
+
+    U --> UC1
+    U --> UC2
+    U --> UC3
+    U --> UC4
+    U --> UC5
+    U --> UC6
+    U --> UC7
+```
 ---
 ## 👨‍💻 Autor
 
